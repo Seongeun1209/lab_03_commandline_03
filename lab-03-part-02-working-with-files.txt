@@ -52,8 +52,9 @@ Copy and paste the output below.
 ----------
 
 $ ls -l
-bar.txt
-foo.txt
+total 0
+-rw-r--r-- 1 Seongeun Kim 197610 0 Oct 24 15:57 bar.txt
+-rw-r--r-- 1 Seongeun Kim 197610 0 Oct 24 15:57 foo.txt
 
 ==========
 9. Create a copy of bar.txt called baz.txt and then list the files again.
@@ -95,15 +96,14 @@ baz.txt  qux.txt
 [NO OUTPUT]
 ----------
 
-
-
 ==========
 13. Try removing the directory called my_files using rmdir.
 
 Write out the command that you used and what happened.
 ----------
 
-
+$ rmdir my_files
+rmdir: failed to remove 'my_files': Directory not empty
 
 ==========
 14. Try removing the directory called my_files using rm.
@@ -111,7 +111,8 @@ Write out the command that you used and what happened.
 Write out the command that you used and what happened.
 ----------
 
-
+$ rm my_files
+rm: cannot remove 'my_files': Is a directory
 
 ==========
 15. MAKE SURE YOU'RE IN THE mtec100-lab-03 directory!  
@@ -120,8 +121,6 @@ Force the removal of the directory and files using the -rf flag
 
 $ rm -rf my_files
 ----------
-
-
 
 ==========
 16. There's a txt file version of a book located in the mtec1003-lab-03 folder.  It is in the following directory if you're in the lab folder:
@@ -133,7 +132,7 @@ Use the command called cat on the file to show its contents.
 Describe what happened below.
 ----------
 
-
+This commmand shows the text content of the book.
 
 ==========
 17. That was a lot of text.  Let's find ways to limit it.  Using the same file...
@@ -145,7 +144,7 @@ Use the command, head, on the file to show the contents of the beginning of the 
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
 
-
+Title: The Prince
 
 ==========
 18. Using the same file again!
@@ -157,7 +156,10 @@ Use tail on the file to show the contents of the end of the file.
 Write the command that you used below.  Write the last line of the output below (it should be the title).
 ----------
 
-
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
 
 ==========
 19. Using the same file...
@@ -169,7 +171,9 @@ Use less and more on the file to show the contents of the file.  Try pressing sp
 Write the command that you used below.  Describe what spacebar and q does after using either less or more.
 ----------
 
-
+$ less books/other/pg1232.txt
+Ppressing the spacebar brings me to the next page
+Pressing "q" quits me out of the screen that has the text content of the book
 
 ==========
 20. Describe what situations you would use the following commands for viewing files: less, more, cat, tail, head
@@ -177,14 +181,28 @@ Write the command that you used below.  Describe what spacebar and q does after 
 (Some characteristics that may help your description might be the length of the file, whether or not you'd like to read the whole thing... or just the beginning or end, etc.)
 ----------
 
-
+Less: use when you want to see the text of the book but do not want it to print the content on the git bash command line screen
+More: this function did not work for me so I am not sure
+    $ more books/other/pg1232.txt
+    bash: more: command not found
+Cat: use when you want to the text of the book printed on the command line screen
+Head: use when you only want to see the information at the beginning
+Tail: use when you only want to see the information at the end
 
 ==========
 21.  How many words are in pg1232.txt?  What command did you use to determine the word count?
 ----------
 
+52639 words
 
+$ wc -w books/other/pg1232.txt
+52639 books/other/pg1232.txt
 
 ==========
 22.  How many lines are in pg1232.txt?  What command did you use to determine the line count?
 ----------
+
+5063 lines
+
+$ wc -l books/other/pg1232.txt
+5063 books/other/pg1232.txt
