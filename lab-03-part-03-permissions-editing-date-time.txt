@@ -117,6 +117,7 @@ $ ls -l copy_to_backup.sh
 -rw-r--r-- 1 Seongeun Kim 197610 0 Nov  1 22:39 copy_to_backup.sh
 
 *The chmod command doesn't seem to be working. It's now supposed to say, "rwx", but it isn't
+*Gitbash does not allow it
 
 ==========
 7. Try executing the file!
